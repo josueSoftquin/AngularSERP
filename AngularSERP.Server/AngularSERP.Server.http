@@ -1,0 +1,6 @@
+@AngularSERP.Server_HostAddress = http://localhost:5140
+
+GET {{AngularSERP.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
