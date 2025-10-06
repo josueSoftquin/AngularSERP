@@ -27,7 +27,7 @@ namespace AngularSERP.Server
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            ///Addin all services
+            ///Adding all services
             builder.Services.AddScoped<IJWTService, JWTService>();
 
             builder.Services.AddDbContext<Context>(options => {
@@ -38,11 +38,11 @@ namespace AngularSERP.Server
             builder.Services.AddIdentityCore<User>(options => {
 
                 //password configuration
-                options.Password.RequiredLength = 6;
-                options.Password.RequireDigit = false;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredLength = 8;
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireNonAlphanumeric = true;
 
                 //options to confirm user by email
                 options.SignIn.RequireConfirmedEmail = true;

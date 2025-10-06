@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(../node_modules/@angular/material/prebuilt-themes/azure-blue.css);
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.css';
+/*@import url(../node_modules/@fortawesome/fontawesome-free/css/all.css);*/
+
+/* :root{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+
+.custom-dialog-container{
+    z-index: 1050 !important;
+}
+
+.mat-dialog-title{
+    text-align: left;
+}
+
+.p-dialog{
+    border-bottom: 1px outset #ccc;
+}
+
+.mat-form-field{
+    padding: 4px 4px 4px 4px;
+    width: 95%;
+} */
+
+/* .mat-bar-success{
+    --mdc-snackbar-container-color: #50df7a;
+    --mdc-snackbar-supporting-text-color: #fff;
+}
+
+.mat-bar-success button{
+    background-color: #50df7a;
+    color: white !important;
+    border: none;
+}
+
+.mat-bar-error{
+    --mdc-snackbar-container-color: #df5050;
+    --mat-mdc-snack-bar-button-color: #fff;
+    --mdc-snackbar-supporting-text-color: #fff;
+}
+
+.mat-bar-error button{
+    background-color: #df5050;
+    color: white !important;
+    border: none;
+}
+
+.toast{
+    --toast-header-background-color: green;
+} */
+
+.overlay-spinner{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+}

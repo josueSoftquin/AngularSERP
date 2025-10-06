@@ -1,38 +1,36 @@
+import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-
-interface WeatherForecast {
-  date: string;
-  temperatureC: number;
-  temperatureF: number;
-  summary: string;
-}
+import { Component, NgModule, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-root', 
   templateUrl: './app.component.html',
   standalone: false,
   styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit {
-  public forecasts: WeatherForecast[] = [];
 
-  constructor(private http: HttpClient) {}
+export class AppComponent implements OnInit {
+  title = 'Portal Datalula';
+  isLoggedIn = true;
+  isStandalone = false;
+
+  constructor(private http: HttpClient, private readonly router: Router) {}
 
   ngOnInit() {
-    this.getForecasts();
+    this.isStandalone = this.router.url.indexOf('standalone') >= 0
+    setInterval(() => {
+      this.loggedIn();
+    },1000); 
   }
 
-  getForecasts() {
-    this.http.get<WeatherForecast[]>('/weatherforecast').subscribe(
-      (result) => {
-        this.forecasts = result;
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+  loggedIn(){
+    if (this.router.url.indexOf("login") == 1 && this.router.url.indexOf("register") == 1){
+      this.isLoggedIn = false;
+    }
+    else{
+      this.isLoggedIn = true
+    }
   }
 
-  title = 'angularserp.client';
 }

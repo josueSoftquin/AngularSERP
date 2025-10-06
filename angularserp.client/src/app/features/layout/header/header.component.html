@@ -1,0 +1,26 @@
+<mat-toolbar class="custom-toolbar">
+    <button mat-icon-button class="neumorphic-button" aria-label="Toggle Sidebar" (click)="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    &nbsp;
+    <span>
+        Portal Datalula
+    </span>
+    <span class="example-spacer"></span>
+
+    &nbsp;
+
+    <button mat-button [matMenuTriggerFor]="menu" class="neumorphic-button">My account</button>
+    <mat-menu #menu="matMenu">
+        <a mat-menu-item disabled>
+            {{userName}}
+        </a>
+        <a mat-menu-item (click)="openEditDialog()">
+            <i class="fa-solid fa-id-card"></i>&nbsp; Profile
+        </a>
+        <a mat-menu-item (click)="logout()">
+            <i class="fa-solid fa-right-from-bracket"></i>&nbsp; Logout
+        </a>
+    </mat-menu>
+
+</mat-toolbar>

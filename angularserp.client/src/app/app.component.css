@@ -1,14 +1,42 @@
-﻿:host {
-    max-width: 1280px;
-    padding: 2rem;
-    text-align: center;
+﻿@import url(../styles.css);
+
+
+.sidebar-opener{
+    cursor: pointer;
 }
 
-th, td {
-    padding-left: 1rem;
-    padding-right: 1rem;
+.sidebar-slider{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #586ddf;
+    transform: translateX(-75%);
+    transition: ease-in-out 300ms transform;
+    width: 300px;
 }
 
-table {
-    margin: 0 auto;
+.sidebar-slider.sidebar-slide-in{
+    transform: translateX(0%);
+    transition: ease-in-out 600ms transform;
+}
+
+.sidebar-close{
+    position: fixed;
+    top: 0;
+    right: 0;
+    color: white;
+    cursor: pointer;
+    padding: 16px;
+}
+
+.sidebar-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    color: white;
+    font-size: 16px;
+    padding: 16px;
+    height: 100%;
 }

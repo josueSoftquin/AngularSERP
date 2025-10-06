@@ -73,7 +73,7 @@ namespace AngularSERP.Server.Controllers
         [HttpGet("refresh-user-token")]
         public async Task<ActionResult<UserDto>> RefreshTokem()
         {
-            var user = await _userManager.FindByNameAsync(User.FindFirst(ClaimTypes.Name)?.Value);
+            var user = await _userManager.FindByEmailAsync(User.FindFirst(ClaimTypes.Email)?.Value);
             return CreateApplicationUserDto(user);
         }
 

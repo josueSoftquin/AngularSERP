@@ -15,11 +15,6 @@ namespace AngularSERP.Server.Services
         private readonly IConfiguration _config = config ?? throw new ArgumentNullException(nameof(config));
         private readonly SymmetricSecurityKey _jwtKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:Key"]));
 
-        //public JWTService(IConfiguration config) 
-        //{
-        //    _config = config;
-        //    _jwtKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["JWT:Key"]));
-        //}
         public string CreateJWT(User user) 
         {
             var userClaims = new List<Claim>
